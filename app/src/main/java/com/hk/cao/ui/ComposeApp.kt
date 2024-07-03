@@ -1,48 +1,38 @@
 package com.hk.cao.ui
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.Lifecycle
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import com.hk.cao.ui.details.DetailsScreen
-import com.hk.cao.ui.users.UsersScreen
+import com.hk.cao.ui.splash.SplashScreen
+import com.hk.cao.ui.walk_through.WalkThroughScreen
 
 @Composable
 fun ComposeApp() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Route.USER
+        startDestination = Route.SPLASH
     ) {
-        composable(Route.USER) { backStackEntry ->
-            UsersScreen(
-                onUserClick = { username ->
-                    // In order to discard duplicated navigation events, we check the Lifecycle
-                    if (backStackEntry.lifecycle.currentState == Lifecycle.State.RESUMED) {
-                        navController.navigate("${Route.DETAIL}/$username")
-                    }
+        composable(Route.SPLASH) {
+            SplashScreen(
+                onNextScreen = {
+                    navController.navigate(Route.WALKTHROUGH)
                 }
             )
         }
-        composable(
-            route = "${Route.DETAIL}/{${Argument.USERNAME}}",
-            arguments = listOf(
-                navArgument(Argument.USERNAME) {
-                    type = NavType.StringType
-                }
-            ),
-        ) {
-            DetailsScreen()
+
+        composable(Route.WALKTHROUGH) {
+            WalkThroughScreen {
+
+            }
         }
     }
 }
 
 object Route {
-    const val USER = "user"
-    const val DETAIL = "detail"
+    const val SPLASH = "splash"
+    const val WALKTHROUGH = "wall_through"
 }
 
 object Argument {
