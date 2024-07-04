@@ -24,7 +24,6 @@ fun ComposeApp() {
 
         composable(Route.WALKTHROUGH) {
             WalkThroughScreen {
-
             }
         }
     }
