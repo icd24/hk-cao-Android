@@ -1,6 +1,3 @@
-# Jetpack-Compose-Boilerplate
-This repository contains a sample project in Kotlin to demonstrate Jetpack Compose, MVVM, Coroutines, Hilt, Room, Coil, Retrofit, Moshi, Leak Canary and Repository pattern
-
 ## The app has the following base packages:
 
 - database: Room database classes
