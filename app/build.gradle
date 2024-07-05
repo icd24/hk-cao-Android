@@ -9,7 +9,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.hk.cao"
+        applicationId "com.mirabo_global.hk_cao"
         minSdk 23
         targetSdk 34
         versionCode 1
@@ -48,7 +48,7 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-    namespace 'com.hk.cao'
+    namespace 'com.mirabo_global.hk_cao'
 }
 
 dependencies {
