@@ -9,7 +9,7 @@ private val DarkColorPalette = darkColorScheme(
 )
 
 private val LightColorPalette = lightColorScheme(
-    primary = Green700
+    primary = BGMain
 
     /* Other default colors to override
     background = Color.White,

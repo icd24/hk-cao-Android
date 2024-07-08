@@ -138,13 +138,13 @@ fun WalkThroughScreen(onNextScreen: () -> Unit) {
                     })
                 }
             }
-            BottomButton()
+            BottomButton(onNextScreen)
         }
     }
 }
 
 @Composable
-fun BottomButton() {
+fun BottomButton(onNextScreen: () -> Unit) {
         Row( modifier = Modifier
             .fillMaxWidth()
             .height(80.dp)
@@ -185,7 +185,7 @@ fun BottomButton() {
                 .height(48.dp)
                 .background(color = BGMain, shape = RoundedCornerShape(16.dp))
             ) {
-                Button(onClick = { /*TODO*/ }, modifier = Modifier
+                Button(onClick = { onNextScreen() }, modifier = Modifier
                     .fillMaxSize(),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Transparent,
